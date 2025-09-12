@@ -3,11 +3,12 @@ import ProductCard from '../components/ProductCard'
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
 import { useCart } from '../context/CartContext'
+import banner from '../Images/banner_1.png'
 
 const demoProducts = [
-  {id:1, title:'Organic Cotton Tee', description:'Breathable, soft & ethically made', price:499, image:'https://via.placeholder.com/260x200?text=Tee'},
-  {id:2, title:'Eco Carrybag - Small', description:'Handy bag made from recycled fabric', price:199, image:'https://via.placeholder.com/260x200?text=Bag'},
-  {id:3, title:'Linen Shirt', description:'Lightweight linen for everyday comfort', price:899, image:'https://via.placeholder.com/260x200?text=Shirt'},
+  {id:1, title:'Organic Cotton Tee', description:'Breathable, soft & ethically made', price:499, image:'src/Images/Shirt_1.jpg'},
+  {id:2, title:'Eco Carrybag - Small', description:'Handy bag made from recycled fabric', price:199, image:'src/Images/Bag_1.jpg'},
+  {id:3, title:'Linen Shirt', description:'Lightweight linen for everyday comfort', price:899, image:'src/Images/Shirt_2.jpg'},
 ]
 
 const demoSlides = [
@@ -30,7 +31,7 @@ export default function Home(){
       <Hero
         title="Visvas Verve"
         subtitle="Style that cares — sustainable clothes & eco carrybags"
-        bgImage="https://via.placeholder.com/1600x600?text=Visvas+Verve+Banner"
+        bgImage={banner}
       />
 
       <section className="mb-8">

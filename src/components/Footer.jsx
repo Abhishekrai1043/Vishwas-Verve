@@ -33,7 +33,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-3">Support</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-amber-400 transition">Contact Us</a></li>
+            <li><Link to="/contact" className="hover:text-amber-400 transition">Contact Us</Link></li>
             <li><a href="#" className="hover:text-amber-400 transition">FAQs</a></li>
             <li><a href="#" className="hover:text-amber-400 transition">Shipping & Returns</a></li>
             <li><a href="#" className="hover:text-amber-400 transition">Privacy Policy</a></li>
@@ -44,7 +44,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-3">Follow Us</h3>
           <div className="flex gap-4">
-            <a href="#" aria-label="Instagram" className="hover:text-amber-400 transition">
+            <a href="https://www.instagram.com/vishwasverve?igsh=MTdzNDloeW1rYTNrNQ==" aria-label="Instagram" className="hover:text-amber-400 transition">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 4a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm5.25-.75a.75.75 0 110 1.5.75.75 0 010-1.5z"/>
               </svg>
