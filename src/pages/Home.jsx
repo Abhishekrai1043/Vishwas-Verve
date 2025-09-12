@@ -29,7 +29,7 @@ export default function Home(){
   return (
     <div>
       <Hero
-        title="Visvas Verve"
+        title="Vishwas Verve"
         subtitle="Style that cares — sustainable clothes & eco carrybags"
         bgImage={banner}
       />

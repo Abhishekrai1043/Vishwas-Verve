@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-slate-900 font-bold shadow">
               VV
             </div>
-            <span className="font-semibold text-lg text-white">Visvas Verve</span>
+            <span className="font-semibold text-lg text-white">Vishwas Verve</span>
           </div>
           <p className="text-sm text-gray-400">
             Sustainable fashion and eco-friendly carrybags — style with a conscience.
@@ -66,7 +66,7 @@ export default function Footer() {
       {/* Bottom strip */}
       <div className="border-t border-slate-700 mt-8">
         <div className="container mx-auto px-4 py-4 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-2">
-          <div>© {new Date().getFullYear()} Visvas Verve. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Vishwas Verve. All rights reserved.</div>
           <div className="flex gap-4">
             <a href="#" className="hover:text-amber-400 transition">Terms</a>
             <a href="#" className="hover:text-amber-400 transition">Privacy</a>

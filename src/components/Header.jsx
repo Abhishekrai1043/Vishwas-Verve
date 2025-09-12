@@ -49,7 +49,7 @@ export default function Header() {
             VV
           </div>
           <div className="hidden sm:block">
-            <div className="text-lg font-semibold text-slate-900 leading-tight">Visvas Verve</div>
+            <div className="text-lg font-semibold text-slate-900 leading-tight">Vishwas Verve</div>
             <div className="text-xs text-slate-500 tracking-wide">Sustainable · Premium</div>
           </div>
         </Link>
