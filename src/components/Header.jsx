@@ -126,19 +126,24 @@ export default function Header() {
               </button>
 
               {/* Dropdown menu, anchored under avatar; small animation */}
-              <div
-                role="menu"
-                aria-label="User menu"
-                className={`absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-50 transform origin-top-right transition duration-180 ease-out
-                  ${menuOpen ? 'opacity-100 translate-y-0 scale-100 visible' : 'opacity-0 -translate-y-2 scale-95 invisible'}`}
-                style={{ top: 'calc(100% + 8px)' }}
-              >
-                <Link to="/profile" onClick={() => setMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-gray-50" role="menuitem">Profile</Link>
-                <Link to="/orders" onClick={() => setMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-gray-50" role="menuitem">Orders</Link>
-                <Link to="/saved" onClick={() => setMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-gray-50" role="menuitem">Saved</Link>
-                <div className="border-t my-1" />
-                <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50" role="menuitem">Logout</button>
-              </div>
+              {/* Dropdown menu, anchored under avatar; small animation */}
+<div
+  role="menu"
+  aria-label="User menu"
+  className={`absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-50 transform origin-top-right transition duration-180 ease-out
+    ${menuOpen ? 'opacity-100 translate-y-0 scale-100 visible' : 'opacity-0 -translate-y-2 scale-95 invisible'}`}
+  style={{ top: 'calc(100% + 8px)' }}
+>
+  <Link to="/profile" onClick={() => setMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-gray-50" role="menuitem">Profile</Link>
+  <Link to="/orders" onClick={() => setMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-gray-50" role="menuitem">Orders</Link>
+
+  {/* NEW: Wishlist link */}
+  <Link to="/wishlist" onClick={() => setMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-gray-50" role="menuitem">Wishlist</Link>
+
+  <div className="border-t my-1" />
+  <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50" role="menuitem">Logout</button>
+</div>
+
             </div>
           ) : (
             <Link to="/login" className="text-sm text-slate-700 hover:text-slate-900 whitespace-nowrap">Sign in</Link>

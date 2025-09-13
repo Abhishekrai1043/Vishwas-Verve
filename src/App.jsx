@@ -12,6 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Collections from './pages/Collections'
 import Contact from './pages/Contact'        // <-- added
 import { Toaster } from 'react-hot-toast'
+import Wishlist from './pages/Wishlist'
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/collections" element={<Collections />} />
+          <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
         </Routes>
       </main>
       <Footer />
