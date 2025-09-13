@@ -10,8 +10,8 @@ import Cart from './pages/Cart'
 import Product from './pages/Product'
 import ProtectedRoute from './components/ProtectedRoute'
 import Collections from './pages/Collections'
+import Contact from './pages/Contact'        // <-- added
 import { Toaster } from 'react-hot-toast'
-import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -21,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />           {/* <-- contact route */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
@@ -33,7 +34,6 @@ export default function App() {
           />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

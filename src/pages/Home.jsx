@@ -6,9 +6,9 @@ import { useCart } from '../context/CartContext'
 import banner from '../Images/banner_1.png'
 
 const demoProducts = [
-  {id:1, title:'Organic Cotton Tee', description:'Breathable, soft & ethically made', price:499, image:'src/Images/Shirt_1.jpg'},
-  {id:2, title:'Eco Carrybag - Small', description:'Handy bag made from recycled fabric', price:199, image:'src/Images/Bag_1.jpg'},
-  {id:3, title:'Linen Shirt', description:'Lightweight linen for everyday comfort', price:899, image:'src/Images/Shirt_2.jpg'},
+  {id:1, title:'Organic Cotton Tee', description:'Breathable, soft & ethically made', price:499, image:'Images/Shirt_1.jpg'},
+  {id:2, title:'Eco Carrybag - Small', description:'Handy bag made from recycled fabric', price:199, image:'Images/Bag_1.jpg'},
+  {id:3, title:'Linen Shirt', description:'Lightweight linen for everyday comfort', price:899, image:'Images/Shirt_2.jpg'},
 ]
 
 const demoSlides = [
