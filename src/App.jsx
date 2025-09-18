@@ -13,6 +13,7 @@ import Collections from './pages/Collections'
 import Contact from './pages/Contact'        // <-- added
 import { Toaster } from 'react-hot-toast'
 import Wishlist from './pages/Wishlist'
+import SearchResults from './pages/SearchResults'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />           {/* <-- contact route */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/search" element={<SearchResults />} />
           <Route
             path="/cart"
             element={

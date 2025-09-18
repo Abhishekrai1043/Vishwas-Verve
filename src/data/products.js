@@ -23,7 +23,7 @@ const products = [
     title: "Eco Carrybag - Small",
     description:
       "Handy bag made from recycled fabric. Reinforced handles, machine-washable.",
-    price: 199,
+    price: 12,
     images: ["/Images/Bag_1.jpg", "/assets/hero2-2.jpg"],
     sizes: ["One size"],
     sku: "VVT-BAG-SM-02",
@@ -71,12 +71,13 @@ const products = [
     color: "Yellow",
     stock: 40,
     category: "Kids",
+    discount:15,
   },
   {
     id: "6",
     title: "Large Eco Carrybag",
     description: "Spacious carrybag ideal for shopping and travel.",
-    price: 299,
+    price: 12,
     images: ["/Images/Bag_2.jpg"],
     sizes: ["One size"],
     sku: "VVT-BAG-LG-06",
@@ -89,7 +90,7 @@ const products = [
     id: "7",
     title: "Aesthethic Paperbag",
     description: "Designer paperbag ideal for small prducts.",
-    price: 299,
+    price: 20,
     images: ["/Images/Paper_bag.jpg"],
     sizes: ["One size"],
     sku: "VVT-BAG-LG-07",
@@ -97,6 +98,7 @@ const products = [
     color: "Charcoal",
     stock: 80,
     category: "Bags",
+    discount:5,
 
   },
    {
@@ -139,6 +141,7 @@ const products = [
     color: "Charcoal",
     stock: 80,
     category: "Women",
+    discount:10,
 
   },
    {
@@ -148,7 +151,7 @@ const products = [
     price: 229,
     images: ["/Images/W_Shirt_7.jpg"],
     sizes: ["XS", "S", "M", "L"],
-    sku: "VVT-BAG-W-11",
+    sku: "VVT-TEE-W-11",
     material: "Cotton Fabric",
     color: "Charcoal",
     stock: 60,
@@ -162,7 +165,7 @@ const products = [
     price: 199,
     images: ["/Images/W_Shirt_10.jpg"],
     sizes: ["XS", "S", "M", "L"],
-    sku: "VVT-BAG-W-12",
+    sku: "VVT-TEE-W-12",
     material: "Cotton Fabric",
     color: "Charcoal",
     stock: 60,
