@@ -17,7 +17,6 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
 
   const reducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  // start autoplay (clear previous then set)
   function startAutoplay() {
     stopAutoplay()
     if (reducedMotion) return
@@ -41,18 +40,14 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
 
   function resumeAutoplay() {
     pausedRef.current = false
-    // restart only if tab visible
     if (!document.hidden) startAutoplay()
   }
 
-  // ensure autoplay starts on mount and when slides/interval change
   useEffect(() => {
     startAutoplay()
     return () => stopAutoplay()
-    // deliberately depend on slides and interval
   }, [slides, interval, reducedMotion])
 
-  // pause when tab hidden, resume when visible (if not paused by hover)
   useEffect(() => {
     function onVisibility() {
       if (document.hidden) stopAutoplay()
@@ -62,7 +57,6 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
     return () => document.removeEventListener('visibilitychange', onVisibility)
   }, [slides, interval, reducedMotion])
 
-  // keyboard navigation
   useEffect(() => {
     function onKey(e) {
       if (e.key === 'ArrowLeft') {
@@ -77,14 +71,12 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
     return () => window.removeEventListener('keydown', onKey)
   }, [slides.length])
 
-  // navigation helpers
   function goTo(i) {
     setIndex(((i % slides.length) + slides.length) % slides.length)
   }
   function prev() { goTo(index - 1) }
   function next() { goTo(index + 1) }
 
-  // touch handlers for mobile swipe
   function handleTouchStart(e) {
     pauseAutoplay()
     touchStartX.current = e.touches ? e.touches[0].clientX : e.clientX
@@ -102,7 +94,6 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
     const threshold = 50
     if (delta > threshold) prev()
     else if (delta < -threshold) next()
-    // resume after small delay
     setTimeout(() => resumeAutoplay(), 300)
   }
 
@@ -124,15 +115,36 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
       aria-label="Homepage carousel"
     >
       {/* Slides */}
-      <div className="absolute inset-0 flex transition-transform duration-700 ease-out" style={{ transform: `translateX(-${index * 100}%)` }}>
+      <div
+        className="absolute inset-0 flex transition-transform duration-700 ease-out"
+        style={{ transform: `translateX(-${index * 100}%)` }}
+      >
         {slides.map((s, i) => (
-          <div key={s.id ?? i} className="w-full flex-shrink-0 flex items-center justify-center" aria-hidden={i !== index}>
-            <div className="w-full h-full bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: `url(${s.image})` }}>
-              <div className="bg-white/40 backdrop-blur-sm rounded p-4 m-6 max-w-xl text-center">
-                {s.title && <h3 className="text-xl font-semibold">{s.title}</h3>}
-                {s.subtitle && <p className="text-sm text-muted mt-1">{s.subtitle}</p>}
-              </div>
+          <div key={s.id ?? i} className="w-full flex-shrink-0 relative flex items-center justify-center" aria-hidden={i !== index}>
+            {/* Blurred background */}
+            <img
+              src={s.image}
+              alt=""
+              aria-hidden="true"
+              onError={(e) => { e.currentTarget.src = '/Images/fallback.png' }}
+              className="absolute inset-0 w-full h-full object-cover blur-lg scale-110 opacity-40"
+            />
+            {/* Foreground product image */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center">
+              <img
+                src={s.image}
+                alt={s.title || `Slide ${i + 1}`}
+                onError={(e) => { e.currentTarget.src = '/Images/fallback.png' }}
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
+            {/* Optional caption */}
+            {(s.title || s.subtitle) && (
+              <div className="absolute left-6 bottom-6 bg-white/70 backdrop-blur-sm rounded-lg p-4 max-w-md text-center">
+                {s.title && <h3 className="text-lg font-semibold text-slate-900">{s.title}</h3>}
+                {s.subtitle && <p className="text-sm text-slate-700 mt-1">{s.subtitle}</p>}
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -170,7 +182,6 @@ export default function Carousel({ slides = [], interval = 3000, height = 'h-52 
         </>
       )}
 
-      {/* Screen reader announce */}
       <div className="sr-only" aria-live="polite">
         {`Slide ${index + 1} of ${slides.length}${slides[index]?.title ? `: ${slides[index].title}` : ''}`}
       </div>

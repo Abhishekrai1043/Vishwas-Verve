@@ -8,12 +8,16 @@ import Carousel from '../components/Carousel'
 export default function Product() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const product = products.find(p => p.id === id)
+  const product = products.find(p => String(p.id) === String(id))
 
   const { addItem } = useCart()
   const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] ?? '')
   const [qty, setQty] = useState(1)
   const [wished, setWished] = useState(false)
+
+  // NEW: control carousel index + modal
+  const [carouselIndex, setCarouselIndex] = useState(0)
+  const [showModal, setShowModal] = useState(false)
 
   if (!product) {
     return (
@@ -34,7 +38,6 @@ export default function Product() {
       qty
     }
     addItem(item)
-    // give feedback, then navigate to cart optionally
     alert(`${product.title} (${selectedSize}) added to cart.`)
     navigate('/cart')
   }
@@ -43,17 +46,45 @@ export default function Product() {
     <div className="container mx-auto px-4 py-10">
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Left: images / carousel */}
-        <div>
-          <Carousel slides={(product.images || []).map((img, i) => ({ id: i, image: img }))} interval={3000} height="h-96" />
-          {/* small thumbnails */}
+        <div className="relative">
+          <Carousel
+            slides={(product.images || []).map((img, i) => ({
+              id: i,
+              image: img.startsWith('/Images') ? img : `/Images/${img}`,
+            }))}
+            interval={4000}
+            height="h-96"
+            index={carouselIndex} // pass controlled index
+            onIndexChange={setCarouselIndex}
+          />
+
+          {/* Magnifying glass button */}
+          <button
+            onClick={() => setShowModal(true)}
+            className="absolute top-3 right-3 p-2 rounded-full bg-white/80 text-slate-700 hover:text-amber-500 shadow"
+            aria-label="View full image"
+          >
+            <img 
+  src="/Images/magnifying-glass-plus-svgrepo-com.png" 
+  alt="Zoom" 
+  className="w-5 h-5"
+/>
+
+          </button>
+
+          {/* Thumbnails */}
           <div className="mt-4 flex gap-3">
             {(product.images || []).map((img, idx) => (
               <button
                 key={idx}
-                className="w-20 h-20 rounded overflow-hidden border"
-                onClick={() => { /* scroll / focus left carousel if you want */ }}
+                className={`w-20 h-20 rounded overflow-hidden border ${idx === carouselIndex ? 'border-amber-500' : 'border-gray-200'}`}
+                onClick={() => setCarouselIndex(idx)}
               >
-                <img src={img} alt={`${product.title} ${idx+1}`} className="w-full h-full object-cover" />
+                <img
+                  src={img.startsWith('/Images') ? img : `/Images/${img}`}
+                  alt={`${product.title} ${idx + 1}`}
+                  className="w-full h-full object-contain"
+                />
               </button>
             ))}
           </div>
@@ -99,7 +130,7 @@ export default function Product() {
             </button>
 
             <button
-              onClick={() => { setWished(w => !w); /* optionally persist wishlist */ }}
+              onClick={() => setWished(w => !w)}
               className={`px-3 py-2 rounded-md border ${wished ? 'bg-red-50 text-red-600' : 'text-slate-700'}`}
             >
               {wished ? '♥ Wishlisted' : '♡ Wishlist'}
@@ -112,6 +143,23 @@ export default function Product() {
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <button
+            onClick={() => setShowModal(false)}
+            className="absolute top-5 right-5 text-white text-2xl"
+          >
+            ✕
+          </button>
+          <img
+            src={product.images[carouselIndex].startsWith('/Images') ? product.images[carouselIndex] : `/Images/${product.images[carouselIndex]}`}
+            alt={`${product.title} full view`}
+            className="max-h-[90vh] max-w-[90vw] object-contain rounded shadow-lg"
+          />
+        </div>
+      )}
     </div>
   )
 }
