@@ -45,9 +45,14 @@ export default function Header() {
       <div className="container mx-auto px-4 py-3 flex items-center gap-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-slate-900 to-slate-700 flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-md">
-            VV
-          </div>
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md ring-1 ring-slate-200">
+  <img
+    src="/Images/logo.jpg"
+    alt="Visvas Verve Logo"
+    className="w-full h-full object-cover"
+  />
+</div>
+
           <div className="hidden sm:block">
             <div className="text-lg font-semibold text-slate-900 leading-tight">Vishwas Verve</div>
             <div className="text-xs text-slate-500 tracking-wide">Sustainable · Premium</div>

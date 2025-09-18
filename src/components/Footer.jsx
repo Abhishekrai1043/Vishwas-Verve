@@ -8,9 +8,14 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-slate-900 font-bold shadow">
-              VV
-            </div>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md ">
+  <img
+    src="/Images/logo.jpg"
+    alt="Visvas Verve Logo"
+    className="w-full h-full object-cover"
+  />
+</div>
+
             <span className="font-semibold text-lg text-white">Vishwas Verve</span>
           </div>
           <p className="text-sm text-gray-400">

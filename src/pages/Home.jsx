@@ -12,8 +12,8 @@ const demoProducts = [
 ]
 
 const demoSlides = [
-  { id: 1, title: 'Sustainably Sourced', subtitle: 'Organic fabrics, fair trade', image: 'https://via.placeholder.com/1600x600?text=Sustainability' },
-  { id: 2, title: 'Eco Carrybags', subtitle: 'Strong, stylish and reusable', image: 'https://via.placeholder.com/1600x600?text=Carrybags' },
+  { id: 1, title: 'Sustainably Sourced', subtitle: 'Organic fabrics, fair trade', image: 'public/Images/banner_3.jpg' },
+  { id: 2, title: 'Eco Carrybags', subtitle: 'Strong, stylish and reusable', image: 'public/Images/banner_2.jpg' },
   { id: 3, title: 'Limited Edition Tees', subtitle: 'New drop — low stock', image: 'https://via.placeholder.com/1600x600?text=Limited+Drop' },
 ]
 
@@ -35,7 +35,7 @@ export default function Home(){
       />
 
       <section className="mb-8">
-        <Carousel slides={demoSlides} interval={3000} height="h-64 sm:h-80 md:h-96" />
+        <Carousel slides={demoSlides} interval={3000} height="h-60 sm:h-80 md:h-96" />
 
       </section>
 

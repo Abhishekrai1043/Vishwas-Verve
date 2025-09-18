@@ -85,6 +85,92 @@ const products = [
     stock: 80,
     category: "Bags",
   },
+  {
+    id: "7",
+    title: "Aesthethic Paperbag",
+    description: "Designer paperbag ideal for small prducts.",
+    price: 299,
+    images: ["public/Images/Paper_bag.jpg"],
+    sizes: ["One size"],
+    sku: "VVT-BAG-LG-07",
+    material: "Recycled Paper",
+    color: "Charcoal",
+    stock: 80,
+    category: "Bags",
+
+  },
+   {
+    id: "8",
+    title: "Flower 🌸 Printed tshirt",
+    description: "Aesthetic flower printed shirt for girls.",
+    price: 199,
+    images: ["public/Images/W_Shirt_5.jpg"],
+    sizes: ["XS", "S", "M", "L"],
+    sku: "VVT-TEE-W-08",
+    material: "Cotton Fabric",
+    color: "Charcoal",
+    stock: 40,
+    category: "Women",
+
+  },
+   {
+    id: "9",
+    title: "Dragon Shirt",
+    description: "Printed Unisex Shirt.",
+    price: 299,
+    images: ["public/Images/Shirt_8.jpg"],
+    sizes: ["XS", "S", "M", "L"],
+    sku: "VVT-TEE-M-09",
+    material: "Recycled Polyester",
+    color: "Charcoal",
+    stock: 80,
+    category: "Men",
+
+  },
+   {
+    id: "10",
+    title: "Blue shirt",
+    description: "Blue and white strip printed shirt for women.",
+    price: 299,
+    images: ["public/Images/W_Shirt_6.jpg"],
+    sizes: ["XS", "S", "M", "L"],
+    sku: "VVT-TEE-W-10",
+    material: "Cotton Fabric",
+    color: "Charcoal",
+    stock: 80,
+    category: "Women",
+
+  },
+   {
+    id: "11",
+    title: "Aesthetic t-shirt",
+    description: "Classy old fashion t-shirt for women.",
+    price: 229,
+    images: ["public/Images/W_Shirt_7.jpg"],
+    sizes: ["XS", "S", "M", "L"],
+    sku: "VVT-BAG-W-11",
+    material: "Cotton Fabric",
+    color: "Charcoal",
+    stock: 60,
+    category: "Women",
+
+  },
+  {
+    id: "12",
+    title: "Oversized t-shirt",
+    description: "Oversized best T-shirt for cool look for women.",
+    price: 199,
+    images: ["public/Images/W_Shirt_10.jpg"],
+    sizes: ["XS", "S", "M", "L"],
+    sku: "VVT-BAG-W-12",
+    material: "Cotton Fabric",
+    color: "Charcoal",
+    stock: 60,
+    category: "Women",
+
+  }
+  
+
 ];
 
 export default products;
