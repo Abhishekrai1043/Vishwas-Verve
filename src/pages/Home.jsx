@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
 import { useCart } from '../context/CartContext'
 import products from '../data/products'
-import banner from '../Images/banner_1.png'
+import banner from '../images/banner_1.png'
 
 const demoSlides = [
   { id: 1, title: 'Sustainably Sourced', subtitle: 'Organic fabrics, fair trade', image: '/Images/banner_3.jpg' },

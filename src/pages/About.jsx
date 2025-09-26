@@ -7,7 +7,7 @@ const team = [
   { name: "Arnav Tiwari", role: "Co-Founder", image: "/Images/team/arnav.jpg" },
   { name: "Harshal", role: "Operations Manager", image: "/Images/team/harshal.jpg" },
   { name: "Roshini", role: "Design & Engagement", image: "/Images/team/roshini.jpg" },
-  { name: "Ananya", role: "Design & Engagement", image: "/Images/team/ananya.jpg" },
+  { name: "Ananya", role: "Fashion Designer", image: "/Images/team/ananya.jpg" },
 ]
 
 export default function About() {
@@ -38,7 +38,7 @@ export default function About() {
         <div className="relative">
           <div className="rounded-2xl overflow-hidden shadow-xl">
             {/* big hero-style image - replace with an eco-fabric banner */}
-            <img src="public/Images/banner_4.png" alt="Sustainable fabrics" className="w-full h-64 md:h-96 object-cover" />
+            <img src="/Images/banner_4.png" alt="Sustainable fabrics" className="w-full h-64 md:h-96 object-cover" />
           </div>
 
           {/* small badge */}

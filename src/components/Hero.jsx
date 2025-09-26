@@ -33,7 +33,7 @@ export default function Hero({
         {/* blurred background layer - this makes the banner slightly blurred */}
         <div className="absolute inset-0">
           {/* use backdrop blur if supported; fallback vignette */}
-          <div className="absolute inset-0 backdrop-blur-sm bg-black/10 pointer-events-none" />
+          <div className="absolute inset-0 backdrop-blur-[1px] bg-black/10 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 pointer-events-none" />
         </div>
 
